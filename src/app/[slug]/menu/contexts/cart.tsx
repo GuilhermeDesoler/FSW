@@ -34,12 +34,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
       if (productIndex !== -1) {
         const updatedProducts = [...prev];
-        updatedProducts[productIndex].quantity += 1;
+        updatedProducts[productIndex].quantity += product.quantity;
 
         return updatedProducts;
       }
 
-      return [...prev, { ...product, quantity: 1 }];
+      return [...prev, product];
     });
   };
 
