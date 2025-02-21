@@ -11,14 +11,14 @@ interface ProductHeaderProps {
   product: Pick<Product, "imageUrl" | "name">;
 }
 
-const ProductHeader = ({product}: ProductHeaderProps) => {
+const ProductHeader = ({ product }: ProductHeaderProps) => {
   const router = useRouter();
-  
-  const handleBack = () => router.back();
-  
 
-  return <div>
-            <Button
+  const handleBack = () => router.back();
+
+  return (
+    <div className="relative min-h-[300px] w-full">
+      <Button
         variant="secondary"
         size="icon"
         className="z-58 absolute left-4 top-4 rounded-full"
@@ -40,8 +40,8 @@ const ProductHeader = ({product}: ProductHeaderProps) => {
       >
         <ScrollTextIcon />
       </Button>
+    </div>
+  );
+};
 
-  </div>;
-}
- 
 export default ProductHeader;
